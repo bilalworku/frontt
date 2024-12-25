@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   background-color: #eafbff;
   background-image: linear-gradient(
@@ -37,6 +38,7 @@ nav.active {
   width: 350px;
 }
 
+/* increase the width + slide in.  */
 nav ul {
   display: flex;
   list-style-type: none;
@@ -47,6 +49,7 @@ nav ul {
   overflow-x: hidden;
 }
 
+/* when nav is active w=100 from default w=0; */
 nav.active ul {
   width: 100%;
 }
@@ -69,6 +72,7 @@ nav ul a {
   margin: 0 10px;
 }
 
+/*  the X was drawn using two striaght lines. */
 .icon {
   background-color: #fff;
   border: 0;
