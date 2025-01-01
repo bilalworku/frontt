@@ -114,6 +114,7 @@ main {
   transition: transform 0.3s ease-in;
 }
 
+/* when you hover over the moive class make overview visible.*/
 .movie:hover .overview {
   transform: translateY(0);
 }

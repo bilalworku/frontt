@@ -9,12 +9,14 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
+// this function will return the class name based on the rate
 const getClassByRate = (vote) => {
   if (vote >= 7.5) return "green";
   else if (vote >= 7) return "orange";
   else return "red";
 };
 
+// this function will show the movies on the screen
 const showMovies = (movies) => {
   main.innerHTML = "";
   movies.forEach((movie) => {
@@ -39,6 +41,7 @@ const showMovies = (movies) => {
   });
 };
 
+// this function will fetch the movies from the API
 const getMovies = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
