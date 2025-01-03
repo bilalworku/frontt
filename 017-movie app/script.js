@@ -19,9 +19,13 @@ const getClassByRate = (vote) => {
 // this function will show the movies on the screen
 const showMovies = (movies) => {
   main.innerHTML = "";
+  // create a movie element for each movie
   movies.forEach((movie) => {
+    // get the title, poster_path, vote_average, and overview from the movie object
     const { title, poster_path, vote_average, overview } = movie;
+    // create a div element with the class movie
     const movieElement = document.createElement("div");
+    // add the movie class to the div element
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
     <img
@@ -41,7 +45,7 @@ const showMovies = (movies) => {
   });
 };
 
-// this function will fetch the movies from the API
+// this function will fetch the movies from the API and return the json data.
 const getMovies = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -50,11 +54,14 @@ const getMovies = async (url) => {
 
 getMovies(API_URL);
 
+// add an event listener to the form element
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
+  // if the search term is not empty, call the getMovies function with the SEARCH_API + searchTerm
   if (searchTerm && searchTerm !== "") {
     getMovies(SEARCH_API + searchTerm);
+    // clear the search input
     search.value = "";
-  } else history.go(0);
+  } else history.go(0); // if the search term is empty, reload the page.
 });
